@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "./../Collapse/Collapse.css"; 
 
 const Collapse = ({ title, content }) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(true); //Etat qui détermine si plié ou non
 
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
+  const toggleCollapse = () => { //Fonction pour inverser la valeur true ou false, plié ou non
+    setIsCollapsed(!isCollapsed); 
   };
 
-    const renderContent = () => {
-      if (Array.isArray(content)) {
+    const renderContent = () => { 
+      if (Array.isArray(content)) { //Si content est un tableau :
         return (
           <ul>
             {content.map((item, index) => (
@@ -17,7 +17,7 @@ const Collapse = ({ title, content }) => {
             ))}
           </ul>
         );
-      } else {
+      } else { // Si ce n'est pas un tableau, afficher un paragraphe simple
         return <p>{content}</p>;
       }
     };

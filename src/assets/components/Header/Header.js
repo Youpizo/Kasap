@@ -17,10 +17,10 @@ const Header = () => {
       <nav className="nav">
         <ul>
           <li>
-            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Accueil</Link>
+            <Link to="/" className={location.pathname === "/" ? "active" : ''}>Accueil</Link>
           </li> 
           <li>
-            <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>A Propos</Link>
+            <Link to="/about" className={location.pathname === "/about" ? "active" : ''}>A Propos</Link>
           </li>
         </ul>
       </nav>

@@ -1,27 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ErrorPage from "../src/assets/pages/Erreur";
 import HomePage from "./assets/pages/HomePage";
+import Header from "./assets/components/Header/Header";
+import Footer from "./assets/components/Footer/Footer";
+import Layout from "./assets/components/Layout/Layout";
+import AboutPage from "./assets/pages/About";
 
 
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <HomePage />
-    ),
-    errorElement:
-      <ErrorPage />
-  },
-]);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Router>
+      <Layout>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </main>
+      </Layout>
+      <Footer />
+    </Router>
   </React.StrictMode>
 );
-
-

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 
 // Fonction asynchrone pour récupérer les données depuis l'API
 export const fetchApi = async () => {

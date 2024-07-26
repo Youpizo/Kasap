@@ -5,7 +5,7 @@ import Error from "../components/Erreur/Erreur";
 function ErrorPage() {
     return (
         <>
-                <Error />
+        <Error />
         </>
     );
 }

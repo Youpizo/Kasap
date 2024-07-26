@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const LogementsCard = ({ id, title, cover }) => { //reçoit les props ID TITLE et COVER
   const navigate = useNavigate();  
   const handleCardClick = () => { //Charger la route quand une carte est cliqué 
-    navigate(`/logements/${title}`);
+    navigate(`/logements/${id}`);
   };
 
   return (

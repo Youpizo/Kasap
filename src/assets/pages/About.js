@@ -5,8 +5,8 @@ import About from "../components/About/About"
 const AboutPage = () => {
     return (
         <>
-                <HeaderBanner2 />
-                <About />
+        <HeaderBanner2 />
+        <About />
         </>
     );
 };

@@ -7,7 +7,7 @@ import Header from "./assets/components/Header/Header";
 import Footer from "./assets/components/Footer/Footer";
 import Layout from "./assets/components/Layout/Layout";
 import AboutPage from "./assets/pages/About";
-import PageLogement from "./assets/pages/PageLogement";
+import Logements from "./assets/pages/Logements";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -21,7 +21,7 @@ root.render(
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<ErrorPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/logements/:id" element={<PageLogement />} />
+            <Route path="/logements/:id" element={<Logements />} />
           </Routes>
         </main>
       </Layout>

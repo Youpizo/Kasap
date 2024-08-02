@@ -1,0 +1,95 @@
+.collapse {
+    width: 100%;
+}
+
+.collapse-content {
+    background-color: #F6F6F6;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius: 5px;
+    padding: 25px 28px 20px 20px;
+    width: 100%;
+    transform: scale(0);
+    animation: ScaleIn 0.05s linear forwards;
+}
+
+.collapse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff6060;
+    color: white;
+    border-radius: 10px;
+    height: 52px;
+    padding: 0 20px 0 10px;
+
+}
+
+.collapse-title {
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 100%;
+}
+
+.collapse-icon {
+    transition: transform 0.16s ease;
+    cursor: pointer;
+}
+
+.collapse-icon.open {
+    transform: rotate(180deg);
+}
+
+
+@media screen and (max-width: 600px) {
+    .collapse-header {
+        height: 30px;
+        padding: 10px;
+    }
+
+    .collapse-title {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .collapse-content {
+        font-size: 12px;
+        line-height: 17px;
+        padding: 13px 20px 19px 20px;
+    }
+
+    .collapse svg {
+        width: 20px;
+        height: 16px;
+    }
+}
+
+@keyframes ScaleIn {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  ul,
+  li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+}

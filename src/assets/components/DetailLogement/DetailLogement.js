@@ -3,13 +3,15 @@ import "../DetailLogement/DetailLogement.css"
 import Collapse from "../Collapse/Collapse";
 import Rating from "../Rating/Rating";
 import Tags from "../Tags/Tags"
+import Slideshow from "../Slideshow/Slideshow";
 
 const DetailLogement = ({ logement }) => { //Props -> Logement
-    const { title, description, host, rating, location, equipments, tags } = logement; 
+    const { title, description, host, rating, location, equipments, tags, pictures } = logement; 
     //Destructuration du prop logement pour chaques propriétés
 
     return (
         <div>
+            <Slideshow pictures={pictures} />
             <div className="logement-details">
                 <div className="logement-infos">
                     <h2 className="logement-title">{title}</h2>

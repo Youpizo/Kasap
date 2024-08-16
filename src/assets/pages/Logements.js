@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchApiLogement } from "../Service/fetchApi";
 import { useParams } from "react-router-dom";
 import DetailLogement from "../components/DetailLogement/DetailLogement";
+import Erreur from "../components/Erreur/Erreur";
 
 const Logements = () => {
   const [data, setData] = useState(null); // État pour stocker les données API
@@ -15,7 +16,7 @@ const Logements = () => {
       setLoading(true);
       try {
         const result = await fetchApiLogement(id); // Appel à la fonction fetchApi pour récupérer les données
-        console.log(result);
+        //console.log(result);
 
         if (Array.isArray(result)) {
           setData(result); // Stockage des données dans l'état
@@ -33,16 +34,19 @@ const Logements = () => {
   },[id]);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  
+  if (error || !data) {
+    return <Erreur />; // Retourner la page d'erreur si l'ID n'existe pas ou en cas d'erreur
+  }
 
   return (
     <>
-      {data && data.map((logement) => (
+        <div>
+          {data && data.map((logement) => (
           <DetailLogement 
             logement={logement}
           />
         ))}
+        </div>
     </>
   );
 };

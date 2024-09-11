@@ -35,6 +35,7 @@ const HomePage = () => {
       <div className="grid-container">
         {data && data.map((logement) => (
           <LogementsCard
+            key={logement.id}
             id={logement.id}
             title={logement.title}
             cover={logement.cover}

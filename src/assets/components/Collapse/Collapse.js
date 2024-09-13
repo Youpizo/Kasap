@@ -42,7 +42,8 @@ const Collapse = ({ title, content }) => {
           </svg>
         </div>
       </div>
-      {!isCollapsed && <div className="collapse-content">{renderContent()}</div>}
+      <div className={`collapse-content ${!isCollapsed ? "open" : ""}`}>{renderContent()}
+      </div>
     </div>
   );
 };
